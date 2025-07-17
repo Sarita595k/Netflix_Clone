@@ -18,19 +18,13 @@ export const movieList = async (req, res) => {
 // create movie 
 export const createMovie = async (req, res) => {
     try {
-<<<<<<< HEAD
-        const { title, description, genre, thumbnail, videoUrl } = req.body
-
         // movie saved to db 
-=======
         const { title, description, genre } = req.body
         // to get thumbnail image
         const thumbnail = req.files?.thumbnail?.[0]?.filename;
-        // to get video 
+        // to get video
         const videoUrl = req.files?.videoUrl?.[0]?.filename;
-        // movie saved to db 
-
->>>>>>> f28be0b (Clean start without large files)
+        // movie saved to db
         const movie = new Movie({ title, description, genre, thumbnail, videoUrl })
         await movie.save()
 
@@ -39,13 +33,8 @@ export const createMovie = async (req, res) => {
             title,
             description,
             genre,
-<<<<<<< HEAD
-            thumbnail,
-            videoUrl
-=======
             thumbnail: `${baseUrl}/uploads/thumbnails/${thumbnail}`,
             videoUrl: `${baseUrl}/uploads/videos/${videoUrl}`
->>>>>>> f28be0b (Clean start without large files)
         })
     } catch (err) {
         return res.status(400).json({

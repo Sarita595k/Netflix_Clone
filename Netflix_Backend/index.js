@@ -14,12 +14,9 @@ app.use(express.json())
 // for accessing backend on different port
 app.use(cors())
 
-<<<<<<< HEAD
-=======
 // to serve static files 
 app.use('/uploads', express.static('uploads'));
 
->>>>>>> f28be0b (Clean start without large files)
 // path for user routes 
 app.use('/api/users', router)
 
