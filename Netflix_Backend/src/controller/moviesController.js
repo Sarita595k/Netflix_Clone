@@ -17,6 +17,7 @@ export const movieList = async (req, res) => {
 
 // create movie 
 export const createMovie = async (req, res) => {
+
     try {
         // movie saved to db 
         const { title, description, genre } = req.body
@@ -33,8 +34,8 @@ export const createMovie = async (req, res) => {
             title,
             description,
             genre,
-            thumbnail: `${baseUrl}/uploads/thumbnails/${thumbnail}`,
-            videoUrl: `${baseUrl}/uploads/videos/${videoUrl}`
+            thumbnail,
+            videoUrl
         })
     } catch (err) {
         return res.status(400).json({

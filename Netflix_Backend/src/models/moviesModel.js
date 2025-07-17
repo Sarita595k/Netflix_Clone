@@ -14,21 +14,21 @@ const moviesSchema = new mongoose.Schema({
     },
     thumbnail: {
         type: String,
-        validate: {
-            validator: function (value) {
-                return isURL(value)
-            },
-            message: "Enter a valid url"
-        }
+        // validate: {
+        //     validator: function (value) {
+        //         return isURL(value)
+        //     },
+        //     message: "Enter a valid url"
+        // }
     },
     videoUrl: {
         type: String,
-        validate: {
-            validator: function (value) {
-                return isURL(value)
-            },
-            message: 'enter a valid url for the video'
-        }
+        // validate: {
+        //     validator: function (value) {
+        //         return isURL(value)
+        //     },
+        //     message: 'enter a valid url for the video'
+        // }
     }
 })
 
