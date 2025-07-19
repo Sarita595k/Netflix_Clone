@@ -1,26 +1,27 @@
 import { Routes, Route } from "react-router-dom"
+import './App.css'
 import { Home } from "./Pages/Home"
 import { Register } from "./Pages/Register"
 import { Login } from "./Pages/Login"
 import { Movie } from "./Pages/Movie"
-import styled from "styled-components"
-import { NavHeadContainer } from "./Components/NavHeadContainer"
-
-const MainContainer = styled.div`
-// background:black;
-`
+import { Navbar } from "./Components/Navbar"
+import { Header } from "./Components/Header"
 
 const App = () => {
-  return (
-    <MainContainer>
-      <NavHeadContainer />
+  return (<div className="subContainer">
+    <div className="container" />
+    <div className="mainContainer">
+      {/* <NavHeadContainer /> */}
+      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="movie/:id" element={<Movie />} />
       </Routes>
-    </MainContainer>
+    </div>
+  </div>
   )
 }
 

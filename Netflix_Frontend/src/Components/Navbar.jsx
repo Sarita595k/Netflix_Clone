@@ -8,6 +8,7 @@ height:20vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
+z-index:100;
 `
 
 const LogoImage = styled.img`
@@ -15,9 +16,9 @@ height:50%;
 width:20%;
 `
 const SignInBtn = styled.button`
-// wisth:100%;
+width:100%;
 background:white;
-padding:.7rem 1.2rem;
+padding:.7rem 0;
 border-radius:2.5rem;
 border:none;
 text-decoration:none;
@@ -34,7 +35,7 @@ text-decoration:none;
 export const Navbar = () => {
     return (
         <NavbarDiv>
-            <NavLink href='#'><LogoImage src='\Netflix_Logo_Print_.png' alt="logo image" /></NavLink>
+            <NavLink to='/'><LogoImage src='\Netflix_Logo_Print_.png' alt="logo image" /></NavLink>
             <SignInBtn><StyledNavLink to='/login'>sign in</StyledNavLink></SignInBtn>
         </NavbarDiv >
     )
