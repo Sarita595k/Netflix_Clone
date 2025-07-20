@@ -26,9 +26,9 @@
     width: 100%;
     padding: 1.2rem;
     margin: .5rem 0;
-    text-transform: capitalize;
     background-color: rgba(0, 0, 0, 0.6);
     border: none;
+    color: white;
 }
 
 .formDiv input::placeholder {
@@ -47,8 +47,22 @@
     background-color: red;
     color: white;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .formDiv NavLink {
     color: white;
 }
+
+.loginh3 {
+    text-transform: capitalize;
+    font-weight: 200;
+}
+
+.signupLink {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.headerMainDiv h1 {}

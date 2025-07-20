@@ -30,7 +30,7 @@ color:black;
 text-transform:capitalize;
 text-decoration:none;
 
-:&hover
+&:hover
 `
 export const Navbar = () => {
     return (

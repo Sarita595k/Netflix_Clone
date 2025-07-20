@@ -11,9 +11,7 @@ const App = () => {
   return (<div className="subContainer">
     <div className="container" />
     <div className="mainContainer">
-      {/* <NavHeadContainer /> */}
       <Navbar />
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
