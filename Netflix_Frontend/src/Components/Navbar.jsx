@@ -17,6 +17,7 @@ width:20%;
 `
 const SignInBtn = styled.button`
 width:100%;
+margin-right:5%;
 background:white;
 padding:.7rem 0;
 border-radius:2.5rem;

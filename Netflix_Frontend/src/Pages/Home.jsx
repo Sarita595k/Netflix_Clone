@@ -1,16 +1,29 @@
 import styled from "styled-components"
 import { Header } from "../Components/Header"
 import { Register } from "../Components/Register"
+import { MovieList } from "../Components/MovieList"
 
-
+const MainContainer = styled.div`
+position:relative;
+width:100%;
+overflow-x:hidden;
+`
+const MainDiv = styled.div`
+width:100%;
+height:10%;
+background-color:rgba(22, 21, 21, 0.8);
+`
 const HeaderMainDiv = styled.div`
 width:50%;
 text-align:center;
 color:white;
 position:absolute;
-top:30%;
-left:25%;
-tranform:translate(-50%,-50%);
+top:20%;
+left:50%;
+transform:translate(-50%,-50%);
+display:flex;
+flex-direction:column;
+align-items:center;
 `
 const H1 = styled.h1`
 font-size:3.7rem;
@@ -22,13 +35,17 @@ font-size:1.5rem;
 `
 export const Home = () => {
     return (
-        <div>
+        <MainContainer>
             <Header />
-            <HeaderMainDiv>
-                <H1>Unlimited movies, <span>TV</span> shows and more</H1>
-                <H3>Starts at 149. Cancel anytime.</H3>
-                <Register />
-            </HeaderMainDiv>
-        </div>
+            <MainDiv>
+                <HeaderMainDiv>
+                    <H1>Unlimited movies, <span>TV</span> shows and more</H1>
+                    <H3>Starts at 149. Cancel anytime.</H3>
+                    <Register />
+                </HeaderMainDiv>
+            </MainDiv>
+            <h1>trending now</h1>
+            <MovieList />
+        </MainContainer>
     )
 }
