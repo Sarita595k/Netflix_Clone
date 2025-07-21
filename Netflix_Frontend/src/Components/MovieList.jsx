@@ -35,23 +35,24 @@ const movies = [{
     id: 11,
     image: "https://occ-0-3646-3647.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWS-EyoFBa-Svry6VvSCb6i3SN_WT20j-Iy5uiKWKH9rNk9qGhr97KLX_so6qg-EGRk5kyuXamvO6bwxx_DptuTt_iIGWIAxkoA.jpg?r=c23"
 }, {
-    //     id: 12,
-    //     image: "https://occ-0-3646-3647.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABRe8IFKaQtN-uCfkGMACmNrWS4DdnpSmhijvGwoak50b-GpZwWcSv1-emLg0WUJy0wk5rsNQiwtrQzwhJjQxVWMvDVfO3tN1JqU.jpg?r=e74"
+    id: 12,
+    image: "https://occ-0-3646-3647.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABRe8IFKaQtN-uCfkGMACmNrWS4DdnpSmhijvGwoak50b-GpZwWcSv1-emLg0WUJy0wk5rsNQiwtrQzwhJjQxVWMvDVfO3tN1JqU.jpg?r=e74"
 },
 ]
 
 const CardContainer = styled.div`
 margin:5rem;
 height:100%;
+display:flex;
 `
 const Card = styled.div`
 position:relative;
 display:inline-block;
-padding:2rem;
+padding:2rem 1.3rem;
 `
 const Image = styled.img`
 height:12rem;
-width:9rem;
+width:8rem;
 border-radius:15px;
 `
 const H1 = styled.h1`
@@ -66,16 +67,27 @@ font-family: Arial, Helvetica, sans-serif;
 text-shadow:0 0 10px 0;
 `
 export const MovieList = () => {
-    const [movieIndex, setMovieIndex] = useState()
+    const [movieIndex, setMovieIndex] = useState(0)
 
+    const handleRightClick = () => {
+        setMovieIndex(prev => Math.min(prev + 6, movies.length - 6))
+    }
+    const handleLeftClick = () => {
+        setMovieIndex(prev => Math.max(prev - 6, 0))
+    }
+    const canGoLeft = movieIndex > 0
+    const canGoRight = movieIndex + 6 < movies.length
     return (
         <CardContainer>
-            {movies.map(item => {
+            {canGoLeft && <button onClick={handleLeftClick}>left</button>}
+            {movies.slice(movieIndex, movieIndex + 6).map(item => {
                 return <Card>
                     <H1>{item.id}</H1>
                     <Image key={item.id} src={item.image} alt="image1" />
                 </Card>
             })}
+
+            {canGoRight && <button onClick={handleRightClick}>right</button>}
         </CardContainer>
     )
 }

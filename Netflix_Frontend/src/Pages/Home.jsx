@@ -18,7 +18,7 @@ width:50%;
 text-align:center;
 color:white;
 position:absolute;
-top:20%;
+top:30%;
 left:50%;
 transform:translate(-50%,-50%);
 display:flex;
@@ -33,6 +33,12 @@ const H3 = styled.h3`
 display:inline;
 font-size:1.5rem;
 `
+
+const TrendingNowH1 = styled.h1`
+color:white;
+text-transform:capitalize;
+margin:6% 0 -5% 6%;
+`
 export const Home = () => {
     return (
         <MainContainer>
@@ -44,7 +50,7 @@ export const Home = () => {
                     <Register />
                 </HeaderMainDiv>
             </MainDiv>
-            <h1>trending now</h1>
+            <TrendingNowH1>trending now</TrendingNowH1>
             <MovieList />
         </MainContainer>
     )
