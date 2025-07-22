@@ -104,8 +104,8 @@ export const MovieList = () => {
     return (
         <CardContainer>
             {canGoLeft && <StyledButton onClick={handleLeftClick}><MdOutlineKeyboardArrowLeft /></StyledButton>}
-            {movies.slice(movieIndex, movieIndex + 6).map(item => {
-                return <Card>
+            {movies.slice(movieIndex, movieIndex + 6).map((item, index) => {
+                return <Card key={index}>
                     <H1>{item.id}</H1>
                     <Image key={item.id} src={item.image} alt="image1" />
                 </Card>

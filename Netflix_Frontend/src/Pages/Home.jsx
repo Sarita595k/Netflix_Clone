@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Header } from "../Components/Header"
 import { Register } from "../Components/Register"
 import { MovieList } from "../Components/MovieList"
+import { ReasonsToJoin } from "../Components/ReasonsToJoin"
 
 const MainContainer = styled.div`
 position:relative;
@@ -18,7 +19,7 @@ width:50%;
 text-align:center;
 color:white;
 position:absolute;
-top:30%;
+top:20%;
 left:50%;
 transform:translate(-50%,-50%);
 display:flex;
@@ -37,7 +38,8 @@ font-size:1.5rem;
 const TrendingNowH1 = styled.h1`
 color:white;
 font-weight:300;
-font-size:1.9rem;
+font-size:1.5rem;
+font-family: Arial, Helvetica, sans-serif;
 text-transform:capitalize;
 margin:6% 0 -3% 6%;
 `
@@ -54,6 +56,7 @@ export const Home = () => {
             </MainDiv>
             <TrendingNowH1>trending now</TrendingNowH1>
             <MovieList />
+            <ReasonsToJoin />
         </MainContainer>
     )
 }
