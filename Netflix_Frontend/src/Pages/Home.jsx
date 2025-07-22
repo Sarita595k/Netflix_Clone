@@ -36,8 +36,10 @@ font-size:1.5rem;
 
 const TrendingNowH1 = styled.h1`
 color:white;
+font-weight:300;
+font-size:1.9rem;
 text-transform:capitalize;
-margin:6% 0 -5% 6%;
+margin:6% 0 -3% 6%;
 `
 export const Home = () => {
     return (

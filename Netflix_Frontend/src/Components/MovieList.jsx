@@ -1,5 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const movies = [{
     id: 1,
@@ -41,14 +43,20 @@ const movies = [{
 ]
 
 const CardContainer = styled.div`
-margin:5rem;
-height:100%;
+margin:5rem 5rem 5rem 6rem;
 display:flex;
+align-items:center;
+gap:3rem;
 `
 const Card = styled.div`
 position:relative;
-display:inline-block;
-padding:2rem 1.3rem;
+display:flex:
+align-items:center;
+justify-content:center;
+transition:all .7s ease-in-out;
+&:hover{
+transform:scale(1.1)
+}
 `
 const Image = styled.img`
 height:12rem;
@@ -66,6 +74,22 @@ font-family: Arial, Helvetica, sans-serif;
 -webkit-text-stroke: 2px rgba(255,255,255,0.8);
 text-shadow:0 0 10px 0;
 `
+const StyledButton = styled.button`
+padding:2.7rem 0rem;
+border-radius:25px;
+font-size:2rem;
+text-align:center;
+color:white;
+background:rgba(66, 65, 65, 0.5);
+border:none;
+cursor:pointer;
+transition:all 1s ease-in;
+
+&:hover{
+transform:scale(1.1);
+}
+}
+`
 export const MovieList = () => {
     const [movieIndex, setMovieIndex] = useState(0)
 
@@ -79,7 +103,7 @@ export const MovieList = () => {
     const canGoRight = movieIndex + 6 < movies.length
     return (
         <CardContainer>
-            {canGoLeft && <button onClick={handleLeftClick}>left</button>}
+            {canGoLeft && <StyledButton onClick={handleLeftClick}><MdOutlineKeyboardArrowLeft /></StyledButton>}
             {movies.slice(movieIndex, movieIndex + 6).map(item => {
                 return <Card>
                     <H1>{item.id}</H1>
@@ -87,7 +111,7 @@ export const MovieList = () => {
                 </Card>
             })}
 
-            {canGoRight && <button onClick={handleRightClick}>right</button>}
+            {canGoRight && <StyledButton onClick={handleRightClick}><MdKeyboardArrowRight /></StyledButton>}
         </CardContainer>
     )
 }
