@@ -3,6 +3,7 @@ import { Header } from "../Components/Header"
 import { Register } from "../Components/Register"
 import { MovieList } from "../Components/MovieList"
 import { ReasonsToJoin } from "../Components/ReasonsToJoin"
+import { Frequently } from "../Components/Questions"
 
 const MainContainer = styled.div`
 position:relative;
@@ -15,11 +16,11 @@ height:10%;
 background-color:rgba(22, 21, 21, 0.8);
 `
 const HeaderMainDiv = styled.div`
-width:50%;
+width:100%;
 text-align:center;
 color:white;
 position:absolute;
-top:20%;
+top:12%;
 left:50%;
 transform:translate(-50%,-50%);
 display:flex;
@@ -27,6 +28,7 @@ flex-direction:column;
 align-items:center;
 `
 const H1 = styled.h1`
+width:50%;
 font-size:3.7rem;
 margin-bottom:1rem;
 `
@@ -43,6 +45,9 @@ font-family: Arial, Helvetica, sans-serif;
 text-transform:capitalize;
 margin:6% 0 -3% 6%;
 `
+
+const Div = styled.div`
+margin:0 25%`
 export const Home = () => {
     return (
         <MainContainer>
@@ -56,7 +61,13 @@ export const Home = () => {
             </MainDiv>
             <TrendingNowH1>trending now</TrendingNowH1>
             <MovieList />
+            {/* <TrendingNowH1>more resaons to join</TrendingNowH1> */}
             <ReasonsToJoin />
+            <TrendingNowH1>Frequently asked questions</TrendingNowH1>
+            <Frequently />
+            <Div>
+                <Register />
+            </Div>
         </MainContainer>
     )
 }
