@@ -4,6 +4,7 @@ import { Register } from "../Components/Register"
 import { MovieList } from "../Components/MovieList"
 import { ReasonsToJoin } from "../Components/ReasonsToJoin"
 import { Frequently } from "../Components/Questions"
+import { Footer } from "../Components/Footer"
 
 const MainContainer = styled.div`
 position:relative;
