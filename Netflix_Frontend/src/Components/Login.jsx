@@ -36,8 +36,8 @@ export const Login = () => {
             {/* <div style={{ opacity: "1" }} /> */}
             <h1 style={{ textTransform: "capitalize" }}>sign in</h1>
             <FormDiv className="formDiv">
-                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" /><br />
-                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" /><br />
+                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" required /><br />
+                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" required /><br />
                 <button type="submit">Sign in</button><br />
                 <StyledNavLink>forgot password</StyledNavLink><br />
                 {/* <label htmlFor="userRemember">

@@ -33,9 +33,9 @@ export const RegistrationForm = () => {
             {/* <div style={{ opacity: "1" }} /> */}
             <h1 style={{ textTransform: "capitalize" }}>sign up</h1>
             <FormDiv className="formDiv">
-                <input type="text" name="name" id="username" placeholder="Name" autoComplete="off" />
-                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" /><br />
-                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" /><br />
+                <input type="text" name="name" id="username" placeholder="Name" autoComplete="off" required />
+                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" required /><br />
+                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" required /><br />
                 <button type="submit">Sign up</button><br />
             </FormDiv>
             <H3 className="loginh3">Already have an account on Netflix clone? <NavLink className="signupLink" to="/login">Sign in</NavLink> now</H3>
