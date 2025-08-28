@@ -5,7 +5,7 @@ import { movieList, createMovie, deleteMovie, updateMovie } from '../controller/
 import { mediaUpload } from '../middlewares/combinedMulter.js'
 const moviesRouter = express.Router()
 
-moviesRouter.get('/all-movies', movieList)
+// moviesRouter.get('/all-movies', movieList)
 // moviesRouter.post('/create-movie', jwtAuth, isAdmin, createMovie)
 
 moviesRouter.get('/all-movies', movieList)

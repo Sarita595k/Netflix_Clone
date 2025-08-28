@@ -22,10 +22,16 @@ export const createMovie = async (req, res) => {
         // movie saved to db 
         const { title, description, genre } = req.body
         // to get thumbnail image
-        const thumbnail = req.files?.thumbnail?.[0]?.filename;
+        const thumbnail = req.files?.thumbnail?.[0]?.filename || null;
         // to get video
-        const videoUrl = req.files?.videoUrl?.[0]?.filename;
+        const videoUrl = req.files?.videoUrl?.[0]?.filename || null;
         // movie saved to db
+        if (!thumbnail || !videoUrl) {
+            return res.status(400).json({
+                message: "thumbnail and video url are required",
+                error: err.message
+            })
+        }
         const movie = new Movie({ title, description, genre, thumbnail, videoUrl })
         await movie.save()
 

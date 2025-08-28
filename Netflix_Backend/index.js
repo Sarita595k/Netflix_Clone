@@ -11,6 +11,7 @@ const app = express()
 
 // for parsing json data 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 // for accessing backend on different port
 app.use(cors())
 
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
     res.send("url is working")
 })
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     connectToDB()
-    console.log("server is running at port 3000")
+    console.log("server is running at port 5000")
 })
