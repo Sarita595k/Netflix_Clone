@@ -40,12 +40,15 @@ export const RegistrationForm = () => {
             const response = await axios.post("http://localhost:5000/api/users/signup", {
                 name, email, password
             })
-            alert("Sign up successfully!")
+            alert(response.data.message || "Sign up successfully!")
             setName("")
             setEmail("")
             setPassword("")
         } catch (err) {
-            alert("Failed to signup!:(")
+            alert(err.response?.data?.message || "Failed to signup!:(")
+            setName("")
+            setEmail("")
+            setPassword("")
         }
     }
     return (<>
