@@ -26,10 +26,9 @@ export const createMovie = async (req, res) => {
         // to get video
         const videoUrl = req.files?.videoUrl?.[0]?.filename || null;
         // movie saved to db
-        if (!thumbnail || !videoUrl) {
+        if (!thumbnail) {
             return res.status(400).json({
-                message: "thumbnail and video url are required",
-                error: err.message
+                message: "thumbnail and video url are required"
             })
         }
         const movie = new Movie({ title, description, genre, thumbnail, videoUrl })
@@ -45,8 +44,7 @@ export const createMovie = async (req, res) => {
         })
     } catch (err) {
         return res.status(400).json({
-            message: "error in creating movie",
-            error: err.message
+            message: "error in creating movie"
         })
     }
 }
