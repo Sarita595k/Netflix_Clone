@@ -47,3 +47,5 @@ export const Login = () => {
             <h3 className="loginh3">new to Netflix clone? <NavLink className="signupLink" to="/register">Sign up</NavLink> now</h3>
         </LoginMainDiv></>)
 }
+
+// end of code
