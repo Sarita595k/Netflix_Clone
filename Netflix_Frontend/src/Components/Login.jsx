@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import "../App.css"
+import axios from "axios"
+import { useState } from "react"
 
 const MainDiv = styled.div`
 height:100vh;
@@ -30,15 +32,32 @@ color:white;
 font-size:1.2rem;
 `
 export const Login = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     // starting connecting backend 
+    const handleLogin = async (event) => {
+        event.preventDefault()
+        try {
+            const response = await axios.post("http://localhost:5000/api/users/login", {
+                email, password
+            })
+            alert(response.data.message || "login successfully")
+            setEmail("")
+            setPassword("")
+        } catch (err) {
+            alert(err.response?.data?.message || "failed to login")
+            setEmail("")
+            setPassword("")
+        }
+    }
     return (<>
         <MainDiv />
         <LoginMainDiv>
             {/* <div style={{ opacity: "1" }} /> */}
             <h1 style={{ textTransform: "capitalize" }}>sign in</h1>
-            <FormDiv className="formDiv">
-                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" required /><br />
-                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" required /><br />
+            <FormDiv className="formDiv" onSubmit={handleLogin}>
+                <input type="email" name="email" id="userEmail" placeholder="Email" autoComplete="off" required value={email} onChange={(event) => setEmail(event.target.value)} /><br />
+                <input type="password" name="password" id="userPassword" placeholder="Password" autoComplete="off" required value={password} onChange={(event) => setPassword(event.target.value)} /><br />
                 <button type="submit">Sign in</button><br />
                 <StyledNavLink>forgot password</StyledNavLink><br />
                 {/* <label htmlFor="userRemember">
