@@ -7,7 +7,7 @@ import { Navbar } from "./Components/Navbar"
 // import { Header } from "./Components/Header"
 import { Footer } from "./Components/Footer"
 import { LoginPage } from "./Pages/LoginPage"
-
+import { Dashboard } from "./Pages/Dashboard"
 const App = () => {
   return (<div className="subContainer">
     <div className="container" />
@@ -18,6 +18,7 @@ const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="movie/:id" element={<Movie />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </div>

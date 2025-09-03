@@ -43,7 +43,8 @@ export const signupUser = async (req, res) => {
             email,
             password: hashPassword,
             token,
-            message: "sign up successfully!"
+            message: "sign up successfully!",
+            success: true
         })
     } catch (err) {
         console.log(err.message)
@@ -64,7 +65,7 @@ export const loginUser = async (req, res) => {
             return res.json({ message: "Invalid password" })
         }
         const token = jwt.sign({ id: user._id, role: user.role }, process.env.SECRET_KEY_FOR_JWT, { expiresIn: "1h" })
-        return res.json({ message: "Welcome to the dashboard", token })
+        return res.json({ message: "Welcome to the dashboard", token, success: true })
     } catch (err) {
         return res.json({ error: err.message })
     }

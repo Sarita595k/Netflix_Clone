@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import "../App.css"
 import axios from "axios"
 import { useState } from "react"
-
+import { useNavigate } from "react-router-dom"
 const MainDiv = styled.div`
 height:100vh;
 background-image: url('/header2.jpg');
@@ -34,6 +34,7 @@ font-size:1.2rem;
 export const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
     // starting connecting backend 
     const handleLogin = async (event) => {
         event.preventDefault()
@@ -41,7 +42,10 @@ export const Login = () => {
             const response = await axios.post("http://localhost:5000/api/users/login", {
                 email, password
             })
-            alert(response.data.message || "login successfully")
+            console.log("login")
+            if (response.data.success) {
+                navigate("/Dashboard")
+            }
             setEmail("")
             setPassword("")
         } catch (err) {
