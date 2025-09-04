@@ -1,10 +1,12 @@
-import { DashboardMoviesList } from "../Components/DashboardMoviesList"
+import { MoviesApi } from "../Components/MoviesApi"
+import { ShowsApi } from "../Components/ShowsApi"
 
 export const Dashboard = () => {
     return (
         <>
             <h1>Welcome to your dashboard</h1>
-            <DashboardMoviesList />
+            <MoviesApi />
+            <ShowsApi />
         </>
     )
 }

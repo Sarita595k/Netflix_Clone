@@ -1,0 +1,50 @@
+.moviesHeading {
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+
+.moviesHeading::first-letter {
+    text-transform: uppercase;
+}
+
+.styledButton {
+    padding: 2.7rem 0rem;
+    border-radius: 25px;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    background: rgba(66, 65, 65, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease-in;
+}
+
+.styledButton:hover {
+    transform: scale(1.1);
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .7s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1)
+}
+
+.posterImage {
+    height: 12rem;
+    width: 8rem;
+}
