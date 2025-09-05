@@ -18,6 +18,7 @@ export const ShowsApi = () => {
     useEffect(() => {
         fetchShows()
     }, [])
+
     return (
         <>
             <Top10Shows shows={showsList} />
