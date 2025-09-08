@@ -9,6 +9,7 @@ export const Dashboard = () => {
             <Num1 />
             <MoviesApi />
             <ShowsApi />
+
         </>
     )
 }
