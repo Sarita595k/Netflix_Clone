@@ -9,7 +9,7 @@ export const ShowsApi = () => {
             const response = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=426a13d01b97cad474a6729816a0e719&sort_by=popularity.desc&region=IN`)
             const data = await response.json()
             setShowsList(data.results)
-            console.log(data.results)
+            // console.log(data.results)
         } catch (err) {
 
         }

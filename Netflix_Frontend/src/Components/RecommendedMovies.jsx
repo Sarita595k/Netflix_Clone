@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 
 export const RecommendedMovies = (props) => {
-    console.log(props.movie)
+    // console.log(props.movie)
     return (
         <div className="mainContainer">
             <h1 className="moviesHeading">recommended movies</h1>
