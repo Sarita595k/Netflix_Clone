@@ -1,29 +1,32 @@
 import styled from "styled-components"
+import { GetMovieId } from "./Youtube/GetMovieId"
+import { useState } from "react"
+const Container = styled.div`
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 
-const Div = styled.div`
-width:80%;
-height:80vw;
-margin:auto;
 `
 const Image = styled.img`
-width:100%;
-height:100%;
+width:80%;
+height:100vh;
 object-fit:fill;
+cursor:pointer;
 `
-
 export const Num1 = (props) => {
+    const [playVideo, setPlayVideo] = useState(false)
+
     // console.log(props.list)
     return (
-        <>
-            <iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${props.list}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></iframe>
-        </>
+        <Container>
+            {props.list.slice(0, 1).map((poster, index) => {
+                return (!playVideo ?
+                    <Image src={`https://image.tmdb.org/t/p/w500${poster.poster_path}`} alt={poster.name} onClick={() => setPlayVideo(true)} />
+                    : <GetMovieId key={index} idIs={poster.id} type="tv" />
+                )
+            })}
+        </Container >
     )
 }

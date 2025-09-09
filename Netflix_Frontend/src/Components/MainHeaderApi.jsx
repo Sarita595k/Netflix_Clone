@@ -23,9 +23,7 @@ export const MainHeaderApi = () => {
     }, [])
     return (
         <>
-            {/* <Num1 list={show} /> */}
-            <GetMovieId list={show} />
-            <GetYouTubeUrl list={show} />
+            <Num1 list={show} />
         </>
     )
 }
