@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const NavbarDiv = styled.div`
 position:relative;
-margin:1% 6% 0 6%;
+margin:-3% 6% 0 6%;
 height:20vh;
 display:flex;
 align-items:center;

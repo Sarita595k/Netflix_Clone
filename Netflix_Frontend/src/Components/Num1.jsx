@@ -1,32 +1,67 @@
 import styled from "styled-components"
 import { GetMovieId } from "./Youtube/GetMovieId"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { DetailsApi } from "./MoviesDetails/DetailsApi"
+import { Register } from "./Register"
+// const MainContainer = styled.div`
+// display:flex;
+// flex-direction:row;
+// `
+
 const Container = styled.div`
 width:100%;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-
+position:relative;
 `
 const Image = styled.img`
-width:80%;
+positon:relative;
+margin:auto auto;
 height:100vh;
-object-fit:fill;
-cursor:pointer;
+width:90%;
+background:url("header-bg-image.jpg");
+background-size:cover;
+border-radius:25px;
+z-index:100;
+// opacity:0.41;
+margin-top:-2%;
+box-shadow:1rem 1rem 1rem 2rem #16020bff;
+`
+
+const DetailsContainer = styled.div`
+position:absolute;
+text-align:left;
+width:30%;
+color:white;
+left:5%;
+top:30%;
 `
 export const Num1 = (props) => {
     const [playVideo, setPlayVideo] = useState(false)
 
-    // console.log(props.list)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setPlayVideo(true)
+        }, 2000);
+
+        return (() => clearTimeout(timer))
+    })
+    console.log(props.list)
     return (
-        <Container>
-            {props.list.slice(0, 1).map((poster, index) => {
-                return (!playVideo ?
-                    <Image src={`https://image.tmdb.org/t/p/w500${poster.poster_path}`} alt={poster.name} onClick={() => setPlayVideo(true)} />
-                    : <GetMovieId key={index} idIs={poster.id} type="tv" />
-                )
-            })}
-        </Container >
+        <div>
+            <Container>
+                {props.list.slice(0, 1).map((poster, index) => {
+                    return (!playVideo ?
+                        <Image src={`https://image.tmdb.org/t/p/w500${poster.poster_path}`} alt={poster.name} onClick={() => setPlayVideo(true)} />
+                        : <GetMovieId key={index} idIs={poster.id} type="tv" />
+                    )
+                })}
+            </Container >
+            <DetailsContainer>
+                <DetailsApi />
+            </DetailsContainer>
+        </div >
     )
 }

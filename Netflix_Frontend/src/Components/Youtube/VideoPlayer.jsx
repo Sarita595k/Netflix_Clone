@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const VideoWrapper = styled.div`
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 100vh;
   overflow: hidden;
 `;
@@ -17,17 +17,17 @@ const Iframe = styled.iframe`
 `;
 
 export const VideoPlayer = (props) => {
-    return (
-        <VideoWrapper>
-            <Iframe
-                width="100%"
-                height="100vh"
-                src={`https://www.youtube.com/embed/${props.keyValue}?autoplay=1&mute=1&modestbranding=1&rel=0&showinfo=0&controls=1&showinfo=0`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></Iframe>
-        </VideoWrapper>
-    )
+  return (
+    <VideoWrapper>
+      <Iframe
+        width="100%"
+        height="100vh"
+        src={`https://www.youtube.com/embed/${props.keyValue}?autoplay=1&mute=1&modestbranding=1&rel=0&showinfo=0&controls=1&showinfo=0`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></Iframe>
+    </VideoWrapper>
+  )
 }

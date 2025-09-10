@@ -3,10 +3,10 @@ import styled from "styled-components"
 import "./Style/commonStyle.css"
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-
+import { GetMovieId } from "./Youtube/GetMovieId";
 
 export const RecommendedMovies = (props) => {
-    // console.log(props.movie)
+    // console.log(props)
     return (
         <div className="mainContainer">
             <h1 className="moviesHeading">recommended movies</h1>
@@ -16,6 +16,7 @@ export const RecommendedMovies = (props) => {
                     // {moviesList.map((movie, index) => (
                     <div className="card" key={index}>
                         <img className="posterImage" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                        {/* <GetMovieId idIs={movie.id} type="movie" /> */}
                     </div>
                 ))}
                 <p className="styledButton"><MdKeyboardArrowRight /></p>
