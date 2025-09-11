@@ -29,15 +29,6 @@ z-index:100;
 margin-top:-2%;
 box-shadow:1rem 1rem 1rem 2rem #16020bff;
 `
-
-const DetailsContainer = styled.div`
-position:absolute;
-text-align:left;
-width:30%;
-color:white;
-left:5%;
-top:30%;
-`
 export const Num1 = (props) => {
     const [playVideo, setPlayVideo] = useState(false)
 
@@ -59,9 +50,6 @@ export const Num1 = (props) => {
                     )
                 })}
             </Container >
-            <DetailsContainer>
-                <DetailsApi />
-            </DetailsContainer>
         </div >
     )
 }
