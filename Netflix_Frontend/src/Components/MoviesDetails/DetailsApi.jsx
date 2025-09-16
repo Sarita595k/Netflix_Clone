@@ -23,3 +23,4 @@ export const DetailsApi = (props) => {
         </>
     )
 }
+// end of code
