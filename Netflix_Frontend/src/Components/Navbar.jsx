@@ -35,7 +35,7 @@ text-decoration:none;
 `
 export const Navbar = () => {
     return (
-        <NavbarDiv>
+        <NavbarDiv className='grid grid-cols-1'>
             <NavLink to='/'><LogoImage src='\Netflix_Logo_Print_.png' alt="logo image" /></NavLink>
             <SignInBtn><StyledNavLink to='/login'>sign in</StyledNavLink></SignInBtn>
         </NavbarDiv >
