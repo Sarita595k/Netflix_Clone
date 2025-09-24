@@ -4,6 +4,7 @@ import { RecommendedMovies } from "./RecommendedMovies";
 export const MoviesApi = () => {
     const [moviesList, setMoviesList] = useState([])
 
+    // fetching the movie data from the api 
     const fetchMovies = async () => {
         try {
             const today = new Date().toISOString().split('T')[0];
