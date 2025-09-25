@@ -33,6 +33,7 @@ text-decoration:none;
 
 &:hover
 `
+// navbar component created 
 export const Navbar = () => {
     return (
         <NavbarDiv className='grid grid-cols-1'>
