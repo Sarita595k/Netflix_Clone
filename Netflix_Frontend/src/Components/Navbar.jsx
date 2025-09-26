@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+// imported styled component
 import styled from 'styled-components'
 
 const NavbarDiv = styled.div`
