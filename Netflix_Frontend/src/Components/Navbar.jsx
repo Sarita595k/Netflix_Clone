@@ -11,7 +11,7 @@ align-items:center;
 justify-content:space-between;
 z-index:100;
 `
-
+// styled for the logo image 
 const LogoImage = styled.img`
 height:50%;
 width:20%;
