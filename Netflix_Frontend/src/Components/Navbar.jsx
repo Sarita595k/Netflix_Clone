@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 // imported styled component
 import styled from 'styled-components'
 
+// navbar designed 
 const NavbarDiv = styled.div`
 position:relative;
 margin:-3% 6% 0 6%;
