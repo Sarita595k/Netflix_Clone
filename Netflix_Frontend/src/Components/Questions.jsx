@@ -66,6 +66,7 @@ export const Frequently = () => {
         setShowIndex(prev => prev === index ? null : index)
     }
     return (
+        // question component 
         <QuestionsContainer>
             {questionsList.map((item, index) => {
                 return (<React.Fragment key={index}>
